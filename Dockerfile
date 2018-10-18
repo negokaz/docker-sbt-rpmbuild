@@ -1,5 +1,4 @@
 FROM centos:7
-MAINTAINER negokaz <negokaz@gmail.com>
 
 ENV OPENJDK_VERSION   1.8.0
 ENV SBT_VERSION       1.2.3
@@ -19,8 +18,7 @@ RUN set -xe; \
  javac -version; \
  sbt sbtVersion;
 
-VOLUME  /project
-WORKDIR /project
+WORKDIR /workspace
 
 ENTRYPOINT ["/usr/bin/sbt"]
 CMD ["-h"]
